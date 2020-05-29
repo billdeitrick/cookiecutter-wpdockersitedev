@@ -1,0 +1,8 @@
+{{cookiecutter.project_name}}/db/*
+!{{cookiecutter.project_name}}/db/.gitkeep
+
+{{cookiecutter.project_name}}/html/*
+!{{cookiecutter.project_name}}/html/.gitkeep
+
+{{cookiecutter.project_name}}/secrets
+
