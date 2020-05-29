@@ -2,8 +2,6 @@ version: "3.8"
 services:
     db:
         image: mysql:8.0
-        volumes:
-            - ./db:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
             MYSQL_DATABASE: wordpress
@@ -12,6 +10,17 @@ services:
         secrets:
             - db_password
             - db_root_password
+        networks:
+            - backend
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - "127.0.0.1:1025:1025"
+            - "127.0.0.1:8025:8025"
+        expose:
+            - 1025
+        networks:
+            - backend
     wp:
         depends_on:
             - db
@@ -27,8 +36,12 @@ services:
         secrets:
             - db_password
             - db_root_password
+        networks:
+            - backend
 secrets:
     db_password:
         file: secrets/db_password.txt
     db_root_password:
         file: secrets/db_root_password.txt
+networks:
+    backend:
