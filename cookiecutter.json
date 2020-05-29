@@ -1,0 +1,5 @@
+{
+    "project_name": "www.site.com",
+    "wordpress_db_password": "changeme",
+    "root_db_password": "changeme"
+}
