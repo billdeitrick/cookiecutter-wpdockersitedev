@@ -1,1 +1,6 @@
+!.vscode # unignore if ignored globally; we want these settings kept
+
 secrets
+
+html/wp-config.php
+html/wp-content/plugins/mailhogsmtp
