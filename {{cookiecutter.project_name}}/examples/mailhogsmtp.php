@@ -6,7 +6,7 @@
  * A simple plugin to use Mailhog with WordPress for development.
  *
  * @wordpress-plugin
- * Plugin Name:       mailhogsmtp
+ * Plugin Name:       Mailhog SMTP
  * Plugin URI:        https://www.billdeitrick.com
  * Description:       A simple plugin to use Mailhog with WordPress for development.
  * Version:           1.0.0
