@@ -7,6 +7,8 @@ services:
             MYSQL_DATABASE: wordpress
             MYSQL_USER: wordpress
             MYSQL_PASSWORD_FILE: /run/secrets/db_password
+        volumes:
+            - ./db:/var/db
         secrets:
             - db_password
             - db_root_password
@@ -28,7 +30,7 @@ services:
         volumes:
             - ./html:/var/www/html
         ports:
-            - "8080:80"
+            - "127.0.0.1:8080:80"
         environment:
             WORDPRESS_DB_HOST: db:3306
             WORDPRESS_DB_USER: wordpress
