@@ -11,7 +11,7 @@ Find-DatabaseContainerID
 #>
 function Find-DatabaseContainerID {
 
-    $id = ($(docker container ls | Select-String _name_db_1) -Split '\s+')[0]
+    $id = ($(docker container ls | Select-String _db_1) -Split '\s+')[0]
 
     if ($id.length -eq 0) {
         throw "Database container not found. Is it running?"
