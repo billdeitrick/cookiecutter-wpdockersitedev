@@ -34,7 +34,7 @@ Load the database password from the secrets directory for use in scripts.
 Get-DatabaseRootPassword
 #>
 function Get-DatabaseRootPassword {
-    return Get-Content -Path "$PSScriptRoot\..\secrets\db_password.txt"
+    return Get-Content -Path "$PSScriptRoot\..\secrets\db_root_password.txt"
 }
 
 Export-ModuleMember -Function Get-DatabaseRootPassword
