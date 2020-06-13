@@ -3,4 +3,4 @@
 secrets
 
 html/wp-config.php
-html/wp-content/plugins/mailhogsmtp
+html/wp-content/plugins/mailhogsmtp.php
