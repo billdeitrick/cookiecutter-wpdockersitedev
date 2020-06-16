@@ -1,4 +1,5 @@
-!.vscode # unignore if ignored globally; we want these settings kept
+# unignore if ignored globally; we want these settings kept
+!.vscode
 
 secrets
 
