@@ -1,4 +1,4 @@
-# cookiecutter-wpdockersitedev
+# cookiecutter-wpdockersitedev 🍪
 
 This is a simple environment for local WordPress development using WordPress, Docker, and VSCode.
 

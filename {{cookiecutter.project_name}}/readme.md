@@ -1,12 +1,34 @@
 # {{cookiecutter.project_name}}
 
-This is a local wordpress development environment for {{cookiecutter.project_name}} based on [cookiecutter-wpdockersitedev](https://github.com/billdeitrick/cookiecutter-wpdockersitedev). 
+This is a local wordpress development environment for {{cookiecutter.project_name}} based on [cookiecutter-wpdockersitedev](https://github.com/billdeitrick/cookiecutter-wpdockersitedev).
+
+This makes it easy to have a reproducible development environment across machines, and enables debugger integration with VSCode. 🎉
+
+## Links
+
+* Your site will be available at (assuming hosts modification): [{{cookiecutter.project_name}}](http://{{cookiecutter.project_name}})
+* MailHog is available at: [localhost:8025](http://localhost:8025)
+
+## Using the Environment
+
+The usual workflow for using this development will look something like this:
+
+1. Ensure the Docker engine is running on your local machine.
+1. Run `docker-compose up` to bring up the containerized development environment.
+1. Run `.\scripts\load_db.ps1` to pull a copy of the dev database into the MySQL container.
+1. Set operating system hosts file such that the hostname for the website you're working on points to 127.0.0.1.
+1. Do your dev work...
+1. When finished, run `.\scripts\dump_db.ps1` to save a copy of the database to source control. This way any changes you make can be pushed to source control.
 
 ## Getting Started: New Site
 
-* Be sure your Docker engine is running. In the root project directory, run `docker-compose up` to bring up the environment.
-* Import the database contents from version control to your database container. Run `.scripts\load_db.ps1` to do this.
-* When you've made changes to the database that you want to push to version control, run `.\scripts\dump_db.ps1`.
+1. Copy the `secrets.example` directory to the `secrets` directory. Change the secrets for the database from the defaults in the new `secrets` directory.
+1. Be sure your Docker engine is running. In the root project directory, run `docker-compose up` to bring up the environment. This also installs the latest version of WordPress.
+1. Edit your operating system's hosts file such that the domain name for your site points to the 127.0.0.1.
+1. Connect to [{{cookiecutter.project_name}}](http://{{cookiecutter.project_name}}) in your browser. You may need to clear cache, use incognito or guest session, etc.
+1. Walk through the WordPress install.
+1. Once you've completed the WordPress install, customize the generated `wp-config.php` using code from the `examples` directory to make environment more development friendly if you would like.
+1. Consider installing the mailhogsmtp plugin from the `examples` directory so you can capture mail from WordPress locally. Note that this plugin won't be pushed to source control.
 
 ## Getting Started: Existing Site
 
